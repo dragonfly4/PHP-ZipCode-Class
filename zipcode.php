@@ -292,7 +292,7 @@ class ZipCode
     
     static function isValidCityState($location)
     { 
-        $words = split(',', $location);
+        $words = explode(',', $location);
 
         if (empty($words) || count($words) != 2 || strlen(trim($words[1])) != 2) {
             return false;
@@ -307,7 +307,7 @@ class ZipCode
     
     static function parseCityState($location)
     {
-        $words = split(',', $location);
+        $words = explode(',', $location);
         
         if (empty($words) || count($words) != 2 || strlen(trim($words[1])) != 2) {
             throw new Exception("Failed to parse city and state from string.");
